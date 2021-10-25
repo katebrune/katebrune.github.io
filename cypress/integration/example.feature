@@ -7,4 +7,4 @@ Feature: Example
 		Given I open the application
 
 	Scenario: Reading the homepage content
-		Then I should see the text "Hello, World!"
+		Then I should see the text "Welcome to Next.js!"
