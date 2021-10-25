@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:components": "jest --watch"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -15,12 +16,18 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
     "@types/react": "17.0.32",
+    "babel-jest": "^27.3.1",
     "eslint": "8.1.0",
     "eslint-config-next": "11.1.2",
     "husky": ">=6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
     "lint-staged": ">=10",
     "prettier": "^2.4.1",
+    "react-test-renderer": "^17.0.2",
     "typescript": "4.4.4"
   },
   "lint-staged": {
