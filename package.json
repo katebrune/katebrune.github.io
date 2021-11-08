@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test:components": "jest --watch",
+    "test:components": "jest",
     "test:features": "cypress run",
     "test:features-open": "cypress open",
+    "test:features-ci": "start-server-and-test dev http://localhost:3000 test:features",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -34,7 +36,7 @@
     "babel-loader": "^8.2.3",
     "cypress": "^8.6.0",
     "cypress-cucumber-preprocessor": "^4.3.0",
-    "eslint": "8.1.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
     "husky": ">=6",
     "identity-obj-proxy": "^3.0.0",
@@ -43,6 +45,7 @@
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
     "react-test-renderer": "^17.0.2",
+    "start-server-and-test": "^1.14.0",
     "tailwindcss": "^2.2.17",
     "typescript": "4.4.4"
   },

@@ -1,0 +1,100 @@
+name: Build 👷‍♀️ and Test 📝
+on: push
+
+jobs:
+  lint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: ⬡ Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: 📥 Install Dependencies
+        run: yarn install
+
+      - name: 🧶 Lint
+        run: yarn lint
+
+  unit-test:
+    name: 🏠 Unit Test (Components)
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: ⬡ Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: 📥 Install Dependencies
+        run: yarn install
+
+      - name: 🏃‍♀️ Run Unit Tests
+        run: yarn test:components
+
+  functional-test:
+    name: 🎳 Functional Test (Features)
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: 👯‍♀️ Copy Test Environment Variables
+        run: cp .env.example .env
+
+      - name: ⬡ Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: 📥 Install Dependencies
+        run: yarn install
+
+      - name: 🏃‍♀️ Run Functional Tests
+        run: yarn test:features-ci
+
+  deploy:
+    name: 🚀 Deploy
+    needs: [lint, unit-test, functional-test]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: 💸 Cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nestjs-${{ hashFiles('**/yarn-lock.json')}}
+
+      - name: ⬡ Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: 📥 Install Dependencies
+        run: yarn install
+
+      - name: ⚙️ Build
+        run: yarn build
+
+      - name: 📦 Export
+        run: yarn export
+
+      - name: 🛑 Disable Jekyll Processing
+        run: touch out/.nojekyll
+
+      - name: 🚀 Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: release
+          FOLDER: out
+          CLEAN: true
