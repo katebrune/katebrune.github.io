@@ -1,0 +1,59 @@
+{
+  "name": "katebrune.github.io",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "test:components": "jest",
+    "test:features": "cypress run",
+    "test:features-open": "cypress open",
+    "test:features-ci": "start-server-and-test dev http://localhost:3000 test:features",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/react": "17.0.32",
+    "autoprefixer": "^10.3.7",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
+    "cypress": "^8.6.0",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "11.1.2",
+    "husky": ">=6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "lint-staged": ">=10",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "^17.0.2",
+    "start-server-and-test": "^1.14.0",
+    "tailwindcss": "^2.2.17",
+    "typescript": "4.4.4"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
+  }
+}
