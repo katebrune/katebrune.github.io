@@ -33,7 +33,7 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = ({ postMetadata, postContent }) => {
   return (
-    <div className="mx-52">
+    <div className="mx-52 animate-fadeIn1s">
       <Head>
         <title>{`it's kate | ${postMetadata.title}`}</title>
       </Head>
@@ -66,7 +66,6 @@ export const getStaticProps: GetStaticProps<BlogProps> = async ({ params }) => {
       remarkPlugins: [require('remark-prism')],
     },
   })
-  console.log(postData)
   return {
     props: {
       postMetadata: postData.metadata,

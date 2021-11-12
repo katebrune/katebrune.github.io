@@ -20,6 +20,7 @@ const Home: NextPage<HomeProps> = ({ postsData }) => {
           title={metadata.title}
           description={metadata.description}
           date={metadata.date}
+          tags={metadata.tags}
           key={i}
         />
       ))}
