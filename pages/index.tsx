@@ -1,3 +1,4 @@
+import moment from 'moment'
 import type { GetStaticProps, NextPage } from 'next'
 import Container from 'typedi'
 import { PostPreview } from '../components/PostPreview/post-preview'
@@ -10,9 +11,9 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ postsData }) => {
   return (
     <div className="flex flex-col items-start mt-20 mx-64">
-      <div className="flex items-center border-solid border-4 border-gray-700 w-full mb-4 p-2 justify-center">
+      {/* <div className="flex items-center border-solid border-4 border-gray-700 w-full mb-4 p-2 justify-center">
         <h1 className="text-3xl font-semibold">POSTS</h1>
-      </div>
+      </div> */}
       {postsData.map(({ metadata }, i) => (
         <PostPreview
           id={metadata.id}
@@ -29,9 +30,20 @@ const Home: NextPage<HomeProps> = ({ postsData }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const mdxService = Container.get(MdxService)
   const postsData = mdxService.getAllPostsMetadata()
+  const orderedPosts = postsData
+    .map(({ metadata }) => {
+      const [month, day, year] = metadata.date.replace(',', '').split(' ')
+      return {
+        ...metadata,
+        mDate: moment([parseInt(year), 0, parseInt(day)]).month(month),
+      }
+    })
+    .sort((a, b) => a.mDate - b.mDate)
+    .reverse()
+    .map(({ mDate, ...keep }) => ({ metadata: { ...keep } }))
   return {
     props: {
-      postsData: postsData,
+      postsData: orderedPosts,
     },
   }
 }

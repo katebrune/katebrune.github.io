@@ -1,27 +1,29 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
-import { SerializeOptions } from 'next-mdx-remote/dist/types'
 import { serialize } from 'next-mdx-remote/serialize'
+import Head from 'next/head'
 import { Container } from 'typedi'
+import {
+  MdxImageProps,
+  MdxImage,
+  MdxTitle,
+  MdxText,
+  MdxPre,
+} from '../../components/MdxComponents'
 
 import { MdxService } from '../../services/mdx-service'
 
 const components = {
-  h1: (props: any) => (
-    <h1 className="text-3xl font-semibold my-10" {...props} />
+  h1: (props: any) => <MdxTitle {...props} />,
+  h2: (props: any) => (
+    <h2 className="text-3xl text-gray-800 font-semibold" {...props} />
   ),
-  p: (props: any) => <p className="text-lg" {...props} />,
-  pre: (props: any) => (
-    <pre
-      style={{
-        borderRadius: '8px',
-        margin: 'auto',
-        marginTop: 20,
-        marginBottom: 20,
-      }}
-      {...props}
-    />
+  h3: (props: any) => (
+    <h3 className="text-2xl text-gray-800 font-semibold" {...props} />
   ),
+  p: (props: any) => <MdxText {...props} />,
+  pre: (props: any) => <MdxPre {...props} />,
+  Image: (props: MdxImageProps) => <MdxImage {...props} />,
 }
 
 interface BlogProps {
@@ -32,6 +34,9 @@ interface BlogProps {
 const Blog: NextPage<BlogProps> = ({ postMetadata, postContent }) => {
   return (
     <div className="mx-52">
+      <Head>
+        <title>{`it's kate | ${postMetadata.title}`}</title>
+      </Head>
       <MDXRemote {...postContent} components={components} />
     </div>
   )
@@ -58,9 +63,10 @@ export const getStaticProps: GetStaticProps<BlogProps> = async ({ params }) => {
   const postData = mdxService.getPostData(params!.id as string)
   const mdxSource = await serialize(postData.content, {
     mdxOptions: {
-      remarkPlugins: [require('remark-code-titles'), require('remark-prism')],
+      remarkPlugins: [require('remark-prism')],
     },
   })
+  console.log(postData)
   return {
     props: {
       postMetadata: postData.metadata,

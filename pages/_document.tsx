@@ -9,10 +9,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://unpkg.com/prism-themes/themes/prism-material-oceanic.css"
           ></link>
-          {/* <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
-          ></link> */}
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
