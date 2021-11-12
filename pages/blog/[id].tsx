@@ -33,7 +33,7 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = ({ postMetadata, postContent }) => {
   return (
-    <div className="mx-52 animate-fadeIn1s">
+    <div className="mx-52 animate-fadeIn1s pb-10">
       <Head>
         <title>{`it's kate | ${postMetadata.title}`}</title>
       </Head>
