@@ -10,7 +10,7 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ postsData }) => {
   return (
-    <div className="flex flex-col items-start mt-20 mx-64">
+    <div className="flex flex-col items-start mt-4 md:mt-8 lg:mt-20 mx-8 md:mx-16 lg:mx-64">
       {/* <div className="flex items-center border-solid border-4 border-gray-700 w-full mb-4 p-2 justify-center">
         <h1 className="text-3xl font-semibold">POSTS</h1>
       </div> */}
