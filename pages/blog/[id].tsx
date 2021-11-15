@@ -47,7 +47,7 @@ const Blog: NextPage<BlogProps> = ({ postMetadata, postContent }) => {
   }, [])
 
   return (
-    <div className="mx-52 pb-10">
+    <div className="mx-8 sm:mx-8 md:mx-16 lg:mx-52 pb-10">
       <Head>
         <title>{`it's kate | ${postMetadata.title}`}</title>
       </Head>
