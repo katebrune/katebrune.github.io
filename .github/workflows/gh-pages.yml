@@ -59,6 +59,35 @@ jobs:
       - name: 🏃‍♀️ Run Functional Tests
         run: yarn test:features-ci
 
+  verify-deployment:
+    name: ✅ Verify Deployment 🚀
+    needs: [lint, unit-test, functional-test]
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: 💸 Cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn-lock.json') }}
+
+      - name: ⬡ Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: 📥 Install Dependencies
+        run: yarn install
+
+      - name: ⚙️ Build
+        run: yarn build
+
+      - name: 📦 Export
+        run: yarn export
+
   deploy:
     name: 🚀 Deploy
     needs: [lint, unit-test, functional-test]
@@ -72,7 +101,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-nestjs-${{ hashFiles('**/yarn-lock.json')}}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn-lock.json') }}
 
       - name: ⬡ Setup Node
         uses: actions/setup-node@v1
