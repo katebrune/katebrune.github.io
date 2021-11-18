@@ -1,6 +1,6 @@
 {
   "name": "katebrune.github.io",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,7 @@
     "test:components": "jest",
     "test:features": "cypress run",
     "test:features-open": "cypress open",
-    "test:features-ci": "start-server-and-test dev http://localhost:3000 test:features",
+    "test:features-ci": "start-server-and-test start:test-server http://localhost:3000 test:features",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "start:test-server": "node server.js"
