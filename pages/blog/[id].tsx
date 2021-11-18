@@ -2,7 +2,9 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
+import { useCallback, useEffect, useState } from 'react'
 import { Container } from 'typedi'
+import { FruitSaladLoader } from '../../components/FruitSaladLoader/fruit-salad-loader'
 import {
   MdxImageProps,
   MdxImage,
@@ -32,12 +34,30 @@ interface BlogProps {
 }
 
 const Blog: NextPage<BlogProps> = ({ postMetadata, postContent }) => {
+  const [renderLoading, setRenderLoading] = useState(true)
+
+  /*
+   * want to render loading before the page is rendered (because the loader is cute)
+   * because we are serving static files, we have to manually set a timeout
+   */
+  useEffect(() => {
+    setTimeout(() => {
+      setRenderLoading(false)
+    }, 1000)
+  }, [])
+
   return (
-    <div className="mx-52 animate-fadeIn1s pb-10">
+    <div className="mx-8 sm:mx-8 md:mx-16 lg:mx-52 pb-10">
       <Head>
         <title>{`it's kate | ${postMetadata.title}`}</title>
       </Head>
-      <MDXRemote {...postContent} components={components} />
+      {renderLoading ? (
+        <FruitSaladLoader />
+      ) : (
+        <div className="animate-fadeIn1s">
+          <MDXRemote {...postContent} components={components} />
+        </div>
+      )}
     </div>
   )
 }
