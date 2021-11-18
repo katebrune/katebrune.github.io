@@ -10,7 +10,7 @@ export interface PostPreviewProps {
 
 const Tag = ({ text, key }: { text: string; key: any }) => (
   <div
-    className="bg-gray-200 text-sm text-gray-400 font-medium py-1 px-2.5 rounded-2xl text-center filter drop-shadow"
+    className="bg-gray-200 text-sm text-gray-500 font-medium py-1 px-2.5 rounded-2xl text-center filter drop-shadow"
     key={key}
   >
     {text}

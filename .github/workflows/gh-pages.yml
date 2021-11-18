@@ -140,9 +140,7 @@ jobs:
         run: touch out/.nojekyll
 
       - name: 🚀 Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4.1.6
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: release
-          FOLDER: out
-          CLEAN: true
+          branch: release
+          folder: out
