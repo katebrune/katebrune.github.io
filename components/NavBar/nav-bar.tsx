@@ -7,7 +7,7 @@ export interface NavBarProps {}
 
 export const NavBar: FunctionComponent<NavBarProps> = ({}) => {
   return (
-    <nav className="sticky top-0 h-16 flex items-center justify-between">
+    <nav className="sticky top-0 h-16 flex items-center justify-between z-10 bg-white bg-opacity-90 lg:bg-opacity-0">
       <Link href="/" passHref>
         <div className="flex items-center gap-3 pl-3 pt-3 cursor-pointer">
           <CowboyIcon className="w-10 h-10" />
