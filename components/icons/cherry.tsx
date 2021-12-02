@@ -10,12 +10,12 @@ export const CherryIcon: FunctionComponent<CherryIconProps> = ({
   return (
     <svg
       className={className ?? ''}
-      id="emoji"
+      id="cherry-emoji"
       viewBox="0 0 72 72"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="color">
+      <g>
         <path
           fill="#EA5A47"
           stroke="#EA5A47"
@@ -39,10 +39,10 @@ export const CherryIcon: FunctionComponent<CherryIconProps> = ({
           d="M33.1,60.2c-1.3,0.7-2.7,1-4,1c11.3-9.3,1.8-18.3,0.1-19.7c3.4,0.2,6.6,2.2,8.3,5.4 C39.9,51.8,38,57.7,33.1,60.2z"
         />
       </g>
-      <g id="hair" />
-      <g id="skin" />
-      <g id="skin-shadow" />
-      <g id="line">
+      <g />
+      <g />
+      <g />
+      <g>
         <path
           fill="none"
           stroke="#000000"

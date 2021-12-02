@@ -10,7 +10,7 @@ export interface PostPreviewProps {
 
 const Tag = ({ text, key }: { text: string; key: any }) => (
   <div
-    className="bg-gray-200 text-sm text-gray-500 font-medium py-1 px-2.5 rounded-2xl text-center filter drop-shadow"
+    className="bg-gray-200 text-sm text-gray-600 font-medium py-1 px-2.5 rounded-2xl text-center filter drop-shadow"
     key={key}
   >
     {text}
@@ -28,7 +28,7 @@ export const PostPreview: FunctionComponent<PostPreviewProps> = ({
     <Link href={`/blog/${id}`} passHref>
       <div className="cursor-pointer mb-8">
         <div className="flex items-center">
-          <h3 className="text-2xl font-semibold text-red-400 overflow-ellipsis overflow-hidden whitespace-nowrap filter drop-shadow-sm">
+          <h3 className="text-2xl font-semibold text-pink-500 overflow-ellipsis overflow-hidden whitespace-nowrap filter drop-shadow-sm">
             {title}
           </h3>
         </div>

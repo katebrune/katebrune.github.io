@@ -15,7 +15,10 @@ export const NavBar: FunctionComponent<NavBarProps> = ({}) => {
         </div>
       </Link>
       <div className="flex items-center gap-3 pr-3 pt-3">
-        <a href="https://github.com/katebrune">
+        <a
+          href="https://github.com/katebrune"
+          aria-label="link to katebrune on github"
+        >
           <GithubIcon className="w-10 h-10" />
         </a>
       </div>
