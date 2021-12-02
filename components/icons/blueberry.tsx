@@ -10,11 +10,11 @@ export const BlueberryIcon: FunctionComponent<BlueberryIconProps> = ({
   return (
     <svg
       className={className ?? ''}
-      id="emoji"
+      id="blueberry-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="color">
+      <g>
         <circle cx="31.0752" cy="31.0752" r="15.9318" fill="#1e50a0" />
         <path
           fill="#92d3f5"
@@ -26,7 +26,7 @@ export const BlueberryIcon: FunctionComponent<BlueberryIconProps> = ({
           d="M45.8609,40.3086a6.83,6.83,0,0,1,3.1626-.4173,6.8188,6.8188,0,0,1,1.3688-2.88l.0962-.0884.0962.0884a7.1959,7.1959,0,0,1,1.3688,2.88,6.83,6.83,0,0,1,3.1626.4173l.1132.0651-.0552.1183a7.1677,7.1677,0,0,1-2.3152,2.1859,6.8412,6.8412,0,0,1,.6005,3.1348l-.0268.1278-.13-.0158A7.2429,7.2429,0,0,1,50.4885,44.4a7.1092,7.1092,0,0,1-2.7793,1.5246l-.13.0158-.0269-.1278a6.8058,6.8058,0,0,1,.5654-3.1348,7.1688,7.1688,0,0,1-2.3152-2.1859l-.0552-.1183Z"
         />
       </g>
-      <g id="line">
+      <g>
         <path
           fill="none"
           stroke="#000"

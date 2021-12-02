@@ -11,11 +11,11 @@ export const CowboyIcon: FunctionComponent<CowboyIconProps> = ({
   return (
     <svg
       className={className ?? ''}
-      id="emoji"
+      id="cowboy-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="color">
+      <g>
         <circle cx="36" cy="38" r="24" fill="#FCEA2B" />
         <path
           fill="#6A462F"
@@ -34,10 +34,10 @@ export const CowboyIcon: FunctionComponent<CowboyIconProps> = ({
           d="M49.7251,48.13c-1.79,4.27-6.35,7.23-13.69,7.23c-7.41,0-12.03-3.03-13.8-7.36 C24.2951,48.47,37.235,51.16,49.7251,48.13z"
         />
       </g>
-      <g id="hair" />
-      <g id="skin" />
-      <g id="skin-shadow" />
-      <g id="line">
+      <g />
+      <g />
+      <g />
+      <g>
         <path
           fill="none"
           stroke="#000000"

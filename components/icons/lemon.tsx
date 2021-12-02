@@ -8,11 +8,11 @@ export const LemonIcon: FunctionComponent<LemonIconProps> = ({ className }) => {
   return (
     <svg
       className={className ?? ''}
-      id="emoji"
+      id="lemon-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="color">
+      <g>
         <path
           fill="#fcea2b"
           stroke="none"
@@ -42,10 +42,10 @@ export const LemonIcon: FunctionComponent<LemonIconProps> = ({ className }) => {
           d="M16.1679,57.1214c0,0,5.0539,1.0283,7.2955-0.2063l-4.7058-3.3893L16.1679,57.1214"
         />
       </g>
-      <g id="hair" />
-      <g id="skin" />
-      <g id="skin-shadow" />
-      <g id="line">
+      <g />
+      <g />
+      <g />
+      <g>
         <path
           fill="none"
           stroke="#000000"
