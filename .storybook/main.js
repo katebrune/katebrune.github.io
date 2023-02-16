@@ -12,5 +12,7 @@ module.exports = {
         },
       },
     },
+    'storybook-css-modules',
+    'storybook-dark-mode',
   ],
 }

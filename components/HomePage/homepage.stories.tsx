@@ -1,18 +1,19 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import { HomePage } from './homepage'
+import { HomePage } from './HomePage'
 import { NavBar } from '../NavBar'
+import styles from '../../styles/Page.module.css'
 
 export default {
   title: 'Pages/Home',
   component: HomePage,
   decorators: [
     (Story) => (
-      <>
+      <div className={styles.Page}>
         <NavBar />
         <Story />
-      </>
+      </div>
     ),
   ],
   parameters: {

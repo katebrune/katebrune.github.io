@@ -4,28 +4,19 @@ import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import { useCallback, useEffect, useState } from 'react'
 import { Container } from 'typedi'
-import { FruitSaladLoader } from '../../components/FruitSaladLoader/fruit-salad-loader'
-import {
-  MdxImageProps,
-  MdxImage,
-  MdxTitle,
-  MdxText,
-  MdxPre,
-} from '../../components/MdxComponents'
+import { FruitSaladLoader } from '../../components/FruitSaladLoader/FruitSaladLoader'
+import MdxComponents from '../../components/MdxComponents/MdxComponents'
 
 import { MdxService } from '../../services/mdx-service'
 
 const components = {
-  h1: (props: any) => <MdxTitle {...props} />,
-  h2: (props: any) => (
-    <h2 className="text-3xl text-gray-800 font-semibold" {...props} />
-  ),
-  h3: (props: any) => (
-    <h3 className="text-2xl text-gray-800 font-semibold" {...props} />
-  ),
-  p: (props: any) => <MdxText {...props} />,
-  pre: (props: any) => <MdxPre {...props} />,
-  Image: (props: MdxImageProps) => <MdxImage {...props} />,
+  h1: (props: any) => <MdxComponents.Heading1 {...props} />,
+  h2: (props: any) => <MdxComponents.Heading2 {...props} />,
+  h3: (props: any) => <MdxComponents.Heading3 {...props} />,
+  p: (props: any) => <MdxComponents.Text {...props} />,
+  pre: (props: any) => <MdxComponents.Pre {...props} />,
+  code: (props: any) => <MdxComponents.Code {...props} />,
+  Image: (props: any) => <MdxComponents.Image {...props} />,
 }
 
 interface BlogProps {
@@ -47,7 +38,7 @@ const Blog: NextPage<BlogProps> = ({ postMetadata, postContent }) => {
   }, [])
 
   return (
-    <div className="mx-8 sm:mx-8 md:mx-16 lg:mx-52 pb-10">
+    <div className="mx-8 sm:mx-8 md:mx-16 lg:mx-64 pb-10">
       <Head>
         <title>{`it's kate | ${postMetadata.title}`}</title>
       </Head>

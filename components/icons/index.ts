@@ -1,6 +1,0 @@
-export * from './blueberry'
-export * from './cherry'
-export * from './cowboy'
-export * from './floppy-disk'
-export * from './github'
-export * from './lemon'

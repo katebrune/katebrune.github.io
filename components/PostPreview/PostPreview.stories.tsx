@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { PostPreview, PostPreviewProps } from './post-preview'
+import { PostPreview, PostPreviewProps } from './PostPreview'
 
 export default {
   title: 'Components/PostPreview',

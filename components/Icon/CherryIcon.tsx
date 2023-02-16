@@ -1,19 +1,16 @@
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
-export interface CherryIconProps {
-  className?: string
-}
+export interface CherryIconProps
+  extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
-export const CherryIcon: FunctionComponent<CherryIconProps> = ({
-  className,
-}) => {
+export const CherryIcon: FunctionComponent<CherryIconProps> = (props) => {
   return (
     <svg
-      className={className ?? ''}
       id="cherry-emoji"
       viewBox="0 0 72 72"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g>
         <path

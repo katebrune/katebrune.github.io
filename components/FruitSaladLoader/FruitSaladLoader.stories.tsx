@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { FruitSaladLoader } from './fruit-salad-loader'
+import { FruitSaladLoader } from './FruitSaladLoader'
 
 export default {
   title: 'Components/FruitSaladLoader',

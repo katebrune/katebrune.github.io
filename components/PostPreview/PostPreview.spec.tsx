@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { PostPreview, PostPreviewProps } from './post-preview'
+import { PostPreview, PostPreviewProps } from './PostPreview'
 
 describe('<PostPreview />', () => {
   let mockProps: PostPreviewProps

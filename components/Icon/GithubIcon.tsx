@@ -1,19 +1,16 @@
 import React, { FunctionComponent } from 'react'
 
-export interface GithubIconProps {
-  className?: string
-}
+export interface GithubIconProps
+  extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
 // https://openmoji.org/library/#search=github&emoji=E045
-export const GithubIcon: FunctionComponent<GithubIconProps> = ({
-  className,
-}) => {
+export const GithubIcon: FunctionComponent<GithubIconProps> = (props) => {
   return (
     <svg
-      className={className ?? ''}
       id="github-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g>
         <path
