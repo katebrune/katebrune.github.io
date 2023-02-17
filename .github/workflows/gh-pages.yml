@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build-and-cache:
-    name: ⚙️ Build and 💸 Cache
+    name: ⚙️ Build and 💸 Cache App
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout Repo
@@ -24,14 +24,14 @@ jobs:
         run: yarn export
 
       - name: 💸 Cache Build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*
           key: ${{ github.sha }}
 
       - name: Cache Cypress
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-cypress
         with:
           path: /home/runner/.cache/Cypress
@@ -56,7 +56,7 @@ jobs:
         run: yarn build-storybook
 
       - name: 💸 Cache Build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-storybook
         with:
           path: ./*
@@ -76,7 +76,7 @@ jobs:
           node-version: 16
 
       - name: Load Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*
@@ -99,7 +99,7 @@ jobs:
           node-version: 16
 
       - name: Load Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*
@@ -122,14 +122,14 @@ jobs:
           node-version: 16
 
       - name: Load Build Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*
           key: ${{ github.sha }}
 
       - name: Load Cypress Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-cypress
         with:
           path: /home/runner/.cache/Cypress
@@ -153,15 +153,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Load Build Cache
-        uses: actions/cache@v2
-        id: restore-build
-        with:
-          path: ./*
-          key: ${{ github.sha }}
-
       - name: Load Storybook Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-storybook
         with:
           path: ./*
@@ -191,7 +184,7 @@ jobs:
           node-version: 16
 
       - name: Load Storybook Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-storybook
         with:
           path: ./*
