@@ -19,7 +19,7 @@
     "test:a11y-ci": "yarn build-storybook-docker && start-server-and-test storybook-docker http://localhost:6006 test:a11y",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-storybook-docker": "yarn build-storybook && docker build -f .storybook/Dockerfile -t storybook-docker . --progress=plain",
+    "build-storybook-docker": "docker build -f .storybook/Dockerfile -t storybook-docker . --progress=plain",
     "storybook-docker": "docker run --rm -p 6006:8080 storybook-docker",
     "start:test-server": "node server.js"
   },
