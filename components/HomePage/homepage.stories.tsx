@@ -10,9 +10,11 @@ export default {
   component: HomePage,
   decorators: [
     (Story) => (
-      <div className={styles.Page}>
-        <NavBar />
-        <Story />
+      <div className={styles.Body}>
+        <div className={styles.Page}>
+          <NavBar />
+          <Story />
+        </div>
       </div>
     ),
   ],
