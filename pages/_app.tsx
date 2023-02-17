@@ -12,10 +12,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{"Kate's Blog"}</title>
       </Head>
-      <div className={styles.Page}>
-        <NavBar />
-        <Component {...pageProps} />
-      </div>
+      <body className={styles.Body}>
+        <div className={styles.Page}>
+          <NavBar />
+          <Component {...pageProps} />
+        </div>
+      </body>
     </>
   )
 }
