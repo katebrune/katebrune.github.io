@@ -1,19 +1,16 @@
 import React, { FunctionComponent } from 'react'
 
-export interface CowboyIconProps {
-  className?: string
-}
+export interface CowboyIconProps
+  extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
 // https://openmoji.org/library/#emoji=1F920
-export const CowboyIcon: FunctionComponent<CowboyIconProps> = ({
-  className,
-}) => {
+export const CowboyIcon: FunctionComponent<CowboyIconProps> = (props) => {
   return (
     <svg
-      className={className ?? ''}
       id="cowboy-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g>
         <circle cx="36" cy="38" r="24" fill="#FCEA2B" />

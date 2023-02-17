@@ -1,18 +1,15 @@
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
-export interface BlueberryIconProps {
-  className?: string
-}
+export interface BlueberryIconProps
+  extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
-export const BlueberryIcon: FunctionComponent<BlueberryIconProps> = ({
-  className,
-}) => {
+export const BlueberryIcon: FunctionComponent<BlueberryIconProps> = (props) => {
   return (
     <svg
-      className={className ?? ''}
       id="blueberry-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g>
         <circle cx="31.0752" cy="31.0752" r="15.9318" fill="#1e50a0" />

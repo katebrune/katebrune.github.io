@@ -1,16 +1,15 @@
 import { FunctionComponent } from 'react'
 
-export interface LemonIconProps {
-  className?: string
-}
+export interface LemonIconProps
+  extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
-export const LemonIcon: FunctionComponent<LemonIconProps> = ({ className }) => {
+export const LemonIcon: FunctionComponent<LemonIconProps> = (props) => {
   return (
     <svg
-      className={className ?? ''}
       id="lemon-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g>
         <path

@@ -4,4 +4,4 @@ Feature: Homepage
 		Given I open the application
 
 	Scenario: Reading the homepage
-		Then I should see the text "it's kate"
+		Then I should see the text "katebrune.net"

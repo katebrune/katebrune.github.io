@@ -1,0 +1,57 @@
+.Heading1 {
+  margin-top: var(--mdx__title--margin-y);
+  margin-bottom: var(--mdx__title--margin-y);
+  color: var(--color--primary);
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.075rem;
+}
+
+.Heading2 {
+  color: var(--color__font--primary);
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.075rem;
+}
+
+.Heading3 {
+  color: var(--color__font--primary);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.075rem;
+}
+
+.Text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--color__font--primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.075rem;
+}
+
+.Pre {
+  border-radius: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: hsl(0, 5%, 10%);
+}
+
+.Code {
+  background: hsl(0, 5%, 10%);
+  color: hsl(0, 5%, 80%);
+}
+
+.Image {
+}

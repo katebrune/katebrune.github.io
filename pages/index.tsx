@@ -1,9 +1,9 @@
 import moment from 'moment'
 import type { GetStaticProps, NextPage } from 'next'
 import Container from 'typedi'
-import { PostPreview } from '../components/PostPreview/post-preview'
+import { PostPreview } from '../components/PostPreview/PostPreview'
 import { MdxService } from '../services/mdx-service'
-import { HomePage } from '../components/HomePage/homepage'
+import { HomePage } from '../components/HomePage/HomePage'
 
 interface HomeProps {
   postsData: any[]
