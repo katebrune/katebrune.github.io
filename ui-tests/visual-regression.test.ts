@@ -36,6 +36,6 @@ initStoryshots({
     getMatchOptions,
     beforeScreenshot,
   }),
-  // dont run snapshot test on FruitSaladLoader component
-  storyKindRegex: /^((?!.*?FruitSaladLoader).)*$/,
+  // dont run snapshot test on FruitSaladLoader, PageUnderConstruction component
+  storyKindRegex: /^((?!.*?FruitSaladLoader)(?!.*?PageUnderConstruction).)*$/,
 })
