@@ -5,12 +5,12 @@ export interface GearIconProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
 export const GearIcon: FunctionComponent<GearIconProps> = (props) => {
   return (
     <svg
-      id="emoji"
+      id="gear-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g id="color">
+      <g>
         <path
           fill="#D0CFCE"
           stroke="none"
@@ -22,10 +22,10 @@ export const GearIcon: FunctionComponent<GearIconProps> = (props) => {
           d="M36,24.9064c-5.5228,0-10,4.4772-10,10s4.4772,10,10,10s10-4.4772,10-10S41.5228,24.9064,36,24.9064z M36,39.9064c-2.7614,0-5-2.2386-5-5c0-2.7615,2.2386-5,5-5s5,2.2385,5,5C41,37.6678,38.7614,39.9064,36,39.9064z"
         />
       </g>
-      <g id="hair" />
-      <g id="skin" />
-      <g id="skin-shadow" />
-      <g id="line">
+      <g />
+      <g />
+      <g />
+      <g>
         <circle
           cx="36"
           cy="34.9064"

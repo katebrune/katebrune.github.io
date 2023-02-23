@@ -6,12 +6,12 @@ export interface HammerIconProps
 export const HammerIcon: FunctionComponent<HammerIconProps> = (props) => {
   return (
     <svg
-      id="emoji"
+      id="hammer-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g id="color">
+      <g>
         <polygon
           fill="#a57939"
           points="37.877 21.43 37.848 43.552 39.05 47.175 39.025 62.881 37.817 62.883 34.193 62.889 32.984 62.891 33.009 47.185 34.223 43.558 34.252 21.436 37.877 21.43"
@@ -25,7 +25,7 @@ export const HammerIcon: FunctionComponent<HammerIconProps> = (props) => {
           d="M25.89,12.4785l-.0319,8.02h0a3.3363,3.3363,0,0,1-3.7013.0147h0l.0319-8.0195h0a2.6172,2.6172,0,0,1,3.7013-.0147Z"
         />
       </g>
-      <g id="line">
+      <g>
         <polygon
           fill="none"
           stroke="#000"

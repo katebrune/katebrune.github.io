@@ -13,15 +13,15 @@ export const ConstructionCraneIcon: FunctionComponent<ConstructionCraneIconProps
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
-        <g id="color">
+        <g>
           <polygon fill="#FCEA2B" points="58,25.8333 12,27 12,20 58,21.1667" />
           <polygon fill="#FCEA2B" points="28,59 18,59 20,13 26,13" />
           <rect x="40.5" y="37" width="19" height="4" fill="#D0CFCE" />
         </g>
-        <g id="hair" />
-        <g id="skin" />
-        <g id="skin-shadow" />
-        <g id="line">
+        <g />
+        <g />
+        <g />
+        <g>
           <polygon
             fill="none"
             stroke="#000000"
