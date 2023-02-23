@@ -10,11 +10,11 @@ export const FloppyDiskIcon: FunctionComponent<FloppyDiskIconProps> = ({
   return (
     <svg
       className={className ?? ''}
-      id="emoji"
+      id="floppydisk-emoji"
       viewBox="0 0 72 72"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="color">
+      <g>
         <rect
           x="11.1359"
           y="11"
@@ -58,10 +58,10 @@ export const FloppyDiskIcon: FunctionComponent<FloppyDiskIconProps> = ({
           strokeWidth="2"
         />
       </g>
-      <g id="hair" />
-      <g id="skin" />
-      <g id="skin-shadow" />
-      <g id="line">
+      <g />
+      <g />
+      <g />
+      <g>
         <rect
           x="11.1359"
           y="11"

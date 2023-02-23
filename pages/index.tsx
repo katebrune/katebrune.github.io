@@ -1,7 +1,7 @@
 import moment from 'moment'
 import type { GetStaticProps, NextPage } from 'next'
 import Container from 'typedi'
-import { PostPreview } from '../components/PostPreview/PostPreview'
+import { PageUnderConstruction } from '../components/PageUnderConstruction/PageUnderConstruction'
 import { MdxService } from '../services/mdx-service'
 import { HomePage } from '../components/HomePage/HomePage'
 
@@ -10,6 +10,8 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ postsData }) => {
+  const pageUnderConstruction = true
+  if (pageUnderConstruction) return <PageUnderConstruction />
   return <HomePage postPreviewData={postsData} />
 }
 
