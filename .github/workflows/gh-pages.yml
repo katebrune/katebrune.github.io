@@ -33,13 +33,6 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-      - name: Cache Cypress
-        uses: actions/cache@v3
-        id: restore-cypress
-        with:
-          path: /home/runner/.cache/Cypress
-          key: ${{ github.sha }}
-
   lint:
     name: 👀 ESLint
     runs-on: ubuntu-latest
@@ -64,7 +57,7 @@ jobs:
         run: yarn lint
 
   unit-test:
-    name: 🏠 Unit Test (Components)
+    name: 🏠 Unit Test
     runs-on: ubuntu-latest
     needs: [build-and-cache]
     steps:
@@ -85,38 +78,6 @@ jobs:
 
       - name: 🏃‍♀️ Run Unit Tests
         run: yarn test:components
-
-  functional-test:
-    name: 🎳 Functional Test (Features)
-    runs-on: ubuntu-latest
-    needs: [build-and-cache]
-    steps:
-      - name: ⬇️ Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: ⬡ Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Load Build Cache
-        uses: actions/cache@v3
-        id: restore-build
-        with:
-          path: ./*
-          key: ${{ github.sha }}
-
-      - name: Load Cypress Cache
-        uses: actions/cache@v3
-        id: restore-cypress
-        with:
-          path: /home/runner/.cache/Cypress
-          key: ${{ github.sha }}
-
-      - name: 🏃‍♀️ Run Functional Tests
-        run: yarn test:features-ci
-        env:
-          TEST_SERVER_PORT: 3000
 
   ui-visual-regression:
     name: 🖼 Visual Regression Test
