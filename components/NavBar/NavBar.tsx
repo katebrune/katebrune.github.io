@@ -8,7 +8,7 @@ export interface NavBarProps extends React.HTMLAttributes<HTMLElement> {}
 export const NavBar: FunctionComponent<NavBarProps> = (props) => {
   return (
     <nav className={styles.NavBar} data-testid="navbar_nav" {...props}>
-      <Link href="/" passHref>
+      <Link href="/" passHref legacyBehavior>
         <div className={styles.LeftItemGroup} data-testid="navbar_link-home">
           <Icon.Cowboy
             className={styles.Icon}
@@ -32,5 +32,5 @@ export const NavBar: FunctionComponent<NavBarProps> = (props) => {
         </a>
       </div>
     </nav>
-  )
+  );
 }

@@ -24,7 +24,7 @@ export const PostPreview: FunctionComponent<PostPreviewProps> = ({
   tags,
 }) => {
   return (
-    <Link href={`/blog/${id}`} passHref>
+    <Link href={`/blog/${id}`} passHref legacyBehavior>
       <div className={styles.LinkContainer}>
         <div className={styles.TitleContainer}>
           <h3 className={styles.Title}>{title}</h3>
@@ -42,5 +42,5 @@ export const PostPreview: FunctionComponent<PostPreviewProps> = ({
         </div>
       </div>
     </Link>
-  )
+  );
 }
