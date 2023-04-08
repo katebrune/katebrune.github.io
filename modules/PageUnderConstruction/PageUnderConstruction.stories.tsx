@@ -1,14 +1,15 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, Story } from '@storybook/react'
 
 import { PageUnderConstruction as PageUnderConstructionComponent } from './PageUnderConstruction'
 
 export default {
-  title: 'Components/PageUnderConstruction',
+  title: 'Modules/PageUnderConstruction',
   component: PageUnderConstructionComponent,
   argTypes: {},
-} as ComponentMeta<typeof PageUnderConstructionComponent>
+} as Meta<typeof PageUnderConstructionComponent>
 
-export const PageUnderConstruction: ComponentStory<
-  typeof PageUnderConstructionComponent
-> = (args) => <PageUnderConstructionComponent {...args} />
+export const PageUnderConstruction = {
+  args: {},
+  parameters: {},
+}

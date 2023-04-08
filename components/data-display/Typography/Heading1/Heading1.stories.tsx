@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { Meta } from '@storybook/react'
 
-import { Heading1 as Heading1Component, Heading1Props } from './Heading1'
+import { Heading1 as Heading1Component } from './Heading1'
 import { typographyArgTypes } from '../Typography'
 
 export default {
@@ -12,10 +11,10 @@ export default {
   },
 } as Meta<typeof Heading1Component>
 
-export const Heading1: Story<Heading1Props> = (args) => (
-  <Heading1Component {...args} />
-)
-Heading1.args = {
-  color: 'text-primary',
-  children: 'This is sample text',
+export const Heading1 = {
+  args: {
+    color: 'text-primary',
+    children: 'This is sample text',
+  },
+  parameters: {},
 }

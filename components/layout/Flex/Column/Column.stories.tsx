@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { Meta } from '@storybook/react'
 
-import { Column as ColumnComponent, ColumnProps } from './Column'
+import { Column as ColumnComponent } from './Column'
 import { flexArgTypes } from '../Flex'
 
 export default {
@@ -12,17 +11,16 @@ export default {
   },
 } as Meta<typeof ColumnComponent>
 
-export const Column: Story<ColumnProps> = (args) => (
-  <ColumnComponent {...args} />
-)
-Column.args = {
-  gap: 'none',
-  align: 'start',
-  justify: 'start',
-  children: (
-    <>
-      <div>Item 1</div>
-      <div>Item 2</div>
-    </>
-  ),
+export const Column = {
+  args: {
+    gap: 'none',
+    align: 'start',
+    justify: 'start',
+    children: (
+      <>
+        <div>Item 1</div>
+        <div>Item 2</div>
+      </>
+    ),
+  },
 }

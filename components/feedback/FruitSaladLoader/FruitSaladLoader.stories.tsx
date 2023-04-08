@@ -1,17 +1,14 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
-import { FruitSaladLoader } from './FruitSaladLoader'
+import { FruitSaladLoader as FruitSaladLoaderComponent } from './FruitSaladLoader'
 
 export default {
   title: 'Components/feedback/FruitSaladLoader',
-  component: FruitSaladLoader,
+  component: FruitSaladLoaderComponent,
   argTypes: {},
-} as ComponentMeta<typeof FruitSaladLoader>
+} as Meta<typeof FruitSaladLoaderComponent>
 
-const Template: ComponentStory<typeof FruitSaladLoader> = () => (
-  <FruitSaladLoader />
-)
-
-export const Primary = Template.bind({})
-Primary.args = {}
+export const FruitSaladLoader = {
+  args: {},
+  parameters: {},
+}

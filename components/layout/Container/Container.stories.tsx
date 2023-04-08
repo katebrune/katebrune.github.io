@@ -1,11 +1,6 @@
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { Meta } from '@storybook/react'
 
-import {
-  Container as ContainerComponent,
-  ContainerProps,
-  containerArgTypes,
-} from './Container'
+import { Container as ContainerComponent, containerArgTypes } from './Container'
 
 export default {
   title: 'Components/layout/Container',
@@ -15,14 +10,14 @@ export default {
   },
 } as Meta<typeof ContainerComponent>
 
-export const Container: Story<ContainerProps> = (args) => (
-  <ContainerComponent {...args} />
-)
-Container.args = {
-  width: 'auto',
-  height: 'auto',
-  background: 'slate',
-  color: 'text-secondary',
-  padding: 'none',
-  children: 'Hello, World!',
+export const Container = {
+  args: {
+    width: 'auto',
+    height: 'auto',
+    background: 'slate',
+    color: 'text-secondary',
+    padding: 'none',
+    children: 'Hello, World!',
+  },
+  parameters: {},
 }

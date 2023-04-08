@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { NavBar } from './NavBar'
 
 export default {
-  title: 'Components/NavBar',
+  title: 'Modules/NavBar',
   component: NavBar,
   argTypes: {},
 } as ComponentMeta<typeof NavBar>

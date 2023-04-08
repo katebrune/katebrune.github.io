@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { PostPreview, PostPreviewProps } from './PostPreview'
 
 export default {
-  title: 'Components/PostPreview',
+  title: 'Modules/HomePage/PostPreview',
   component: PostPreview,
   argTypes: {
     title: {

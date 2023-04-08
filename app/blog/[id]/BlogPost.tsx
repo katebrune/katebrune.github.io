@@ -3,7 +3,9 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { HTMLAttributes, useEffect, useState } from 'react'
 import { FruitSaladLoader } from '../../../components/feedback/FruitSaladLoader/FruitSaladLoader'
-import MdxComponents from '../../../components/data-display/MdxComponents/MdxComponents'
+import { Typography } from '../../../components/data-display/Typography/Typography'
+import { Pre } from '../../../components/data-display/Pre/Pre'
+import { Image } from '../../../components/data-display/Image/Image'
 
 export function BlogPost({ content }: { content: any }) {
   const [loadingAnimationVisible, setLoadingAnimationVisible] = useState(true)
@@ -21,25 +23,23 @@ export function BlogPost({ content }: { content: any }) {
 
   const mdxComponents = {
     h1: (props: HTMLAttributes<HTMLHeadingElement>) => (
-      <MdxComponents.Heading1 {...props} />
+      <Typography.Heading1 {...props} color="app-primary" />
     ),
     h2: (props: HTMLAttributes<HTMLHeadingElement>) => (
-      <MdxComponents.Heading2 {...props} />
+      <Typography.Heading2 {...props} color="text-primary" />
     ),
     h3: (props: HTMLAttributes<HTMLHeadingElement>) => (
-      <MdxComponents.Heading3 {...props} />
+      <Typography.Heading3 {...props} color="text-primary" />
     ),
     p: (props: HTMLAttributes<HTMLParagraphElement>) => (
-      <MdxComponents.Text {...props} />
+      <Typography.Paragraph {...props} color="text-primary" />
     ),
-    pre: (props: HTMLAttributes<HTMLPreElement>) => (
-      <MdxComponents.Pre {...props} />
-    ),
+    pre: (props: HTMLAttributes<HTMLPreElement>) => <Pre {...props} />,
     code: (props: HTMLAttributes<HTMLElement>) => (
-      <MdxComponents.Code {...props} />
+      <Typography.Code {...props} color="text-secondary" />
     ),
     Image: (props: HTMLAttributes<HTMLImageElement>) => (
-      <MdxComponents.Image {...props} />
+      <Image {...props} alt="blog post image" />
     ),
   }
 

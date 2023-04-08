@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { Meta } from '@storybook/react'
 
-import { Paragraph as ParagraphComponent, ParagraphProps } from './Paragraph'
+import { Paragraph as ParagraphComponent } from './Paragraph'
 import { typographyArgTypes } from '../Typography'
 
 export default {
@@ -12,10 +11,10 @@ export default {
   },
 } as Meta<typeof ParagraphComponent>
 
-export const Paragraph: Story<ParagraphProps> = (args) => (
-  <ParagraphComponent {...args} />
-)
-Paragraph.args = {
-  color: 'text-primary',
-  children: 'This is sample text',
+export const Paragraph = {
+  args: {
+    color: 'text-primary',
+    children: 'This is sample text',
+  },
+  parameters: {},
 }

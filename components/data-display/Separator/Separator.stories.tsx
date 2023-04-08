@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { Meta } from '@storybook/react'
 
-import { Separator as SeparatorComponent, SeparatorProps } from './Separator'
+import { Separator as SeparatorComponent } from './Separator'
 
 export default {
   title: 'Components/Separator',
@@ -9,7 +8,7 @@ export default {
   argTypes: {},
 } as Meta<typeof SeparatorComponent>
 
-export const Separator: Story<SeparatorProps> = (args) => (
-  <SeparatorComponent {...args} />
-)
-Separator.args = {}
+export const Separator = {
+  args: {},
+  parameters: {},
+}

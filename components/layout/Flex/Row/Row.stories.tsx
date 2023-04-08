@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { Meta } from '@storybook/react'
 
-import { Row as RowComponent, RowProps } from './Row'
+import { Row as RowComponent } from './Row'
 import { flexArgTypes } from '../Flex'
 
 export default {
@@ -12,15 +11,16 @@ export default {
   },
 } as Meta<typeof RowComponent>
 
-export const Row: Story<RowProps> = (args) => <RowComponent {...args} />
-Row.args = {
-  gap: 'none',
-  align: 'start',
-  justify: 'start',
-  children: (
-    <>
-      <div>Item 1</div>
-      <div>Item 2</div>
-    </>
-  ),
+export const Row = {
+  args: {
+    gap: 'none',
+    align: 'start',
+    justify: 'start',
+    children: (
+      <>
+        <div>Item 1</div>
+        <div>Item 2</div>
+      </>
+    ),
+  },
 }
