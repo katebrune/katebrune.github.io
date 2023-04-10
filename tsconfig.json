@@ -19,7 +19,6 @@
     "jsx": "preserve",
     "types": [
       "node",
-      "cypress",
       "jest",
       "@testing-library/jest-dom"
     ],
