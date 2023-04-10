@@ -134,8 +134,7 @@ jobs:
 
   deploy:
     name: 🚀 Deploy
-    needs:
-      [lint, unit-test, functional-test, ui-visual-regression, ui-accessibility]
+    needs: [lint, unit-test, ui-visual-regression, ui-accessibility]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
