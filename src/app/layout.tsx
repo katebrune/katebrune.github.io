@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import { RootLayout } from '../modules/RootLayout/RootLayout'
 
 export const metadata = {

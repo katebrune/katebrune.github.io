@@ -15,7 +15,7 @@ export class MdxService {
   private postsDirectory: string
   private mdxFileExtension: string
   constructor(private fileService: FileService) {
-    this.postsDirectory = path.join(process.cwd(), 'content')
+    this.postsDirectory = path.join(process.cwd(), 'src', 'content')
     this.mdxFileExtension = '.mdx'
   }
 
