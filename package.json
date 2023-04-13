@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test:components": "jest --testPathIgnorePatterns=ui-tests/",
+    "test": "jest --testPathIgnorePatterns=ui-tests/",
     "test:visual-regression": "jest ui-tests/visual-regression.test.ts",
     "test:visual-regression-ci": "yarn build-storybook-docker && start-server-and-test storybook-docker http://localhost:6006 test:visual-regression",
     "test:a11y": "jest ui-tests/a11y.test.ts",

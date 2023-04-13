@@ -23,9 +23,6 @@ jobs:
       - name: 📚 Build Storybook
         run: yarn build-storybook
 
-      - name: 📦 Export
-        run: yarn export
-
       - name: 💸 Cache Build
         uses: actions/cache@v3
         id: restore-build
@@ -77,7 +74,7 @@ jobs:
           key: ${{ github.sha }}
 
       - name: 🏃‍♀️ Run Unit Tests
-        run: yarn test:components
+        run: yarn test
 
   ui-visual-regression:
     name: 🖼 Visual Regression Test
