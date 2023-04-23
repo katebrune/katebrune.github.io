@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "jest --testPathIgnorePatterns=ui-tests/",
+    "test": "jest --testPathIgnorePatterns=__tests__/",
     "test:visual-regression": "jest __tests__/visual-regression.test.ts",
     "test:visual-regression-ci": "yarn build-storybook-docker && start-server-and-test storybook-docker http://localhost:6006 test:visual-regression",
     "test:a11y": "jest __tests__/a11y.test.ts",
