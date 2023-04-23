@@ -77,7 +77,8 @@
     "minimist": "^1.2.6",
     "json5": "^2.2.2",
     "qs": "^6.10.3",
-    "nanoid": "^3.1.31"
+    "nanoid": "^3.1.31",
+    "node-fetch": "^2.6.7"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
