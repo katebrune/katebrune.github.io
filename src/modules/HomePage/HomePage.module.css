@@ -1,7 +1,5 @@
 .Container {
   display: flex;
-  margin-left: var(--homepage__container--margin-x);
-  margin-right: var(--homepage__container--margin-x);
   margin-top: var(--homepage__container--margin-top);
   flex-direction: column;
   align-items: flex-start;
