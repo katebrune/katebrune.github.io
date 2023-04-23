@@ -16,7 +16,7 @@ Hi 👋 This project is my personal blog. It's also a space for me to play aroun
 
 #### Framework
 
-This application uses the [Next.js](https://nextjs.org/) framework. I like working with the Next framework because I think they're opinionated about the right things. I also think SSR is cool and fun. It also is extremely easy to deploy a static site on github pages with Next.
+This application uses the [Next.js](https://nextjs.org/) framework. I like working with the Next framework because I think they're opinionated about the right things.
 
 #### Styling
 
@@ -32,15 +32,11 @@ For icons I used [OpenMoji](https://openmoji.org/). Randomly found them but I th
 
 For unit testing I used [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and Jest. I like that React Testing Library reinforces the idea of testing behavior and experience versus testing the internals of a component, I think that just makes sense. In the future I'd like to take a look at [Cypress component testing](https://docs.cypress.io/guides/component-testing/introduction) for unit testing.
 
-#### Functional Testing
-
-For functional testing I used [Cypress](https://www.cypress.io/). I love Cypress, but i love it even more when I'm using it with [cypress-cucumber-preprocessor](https://github.com/TheBrainFamily/cypress-cucumber-preprocessor). Creating reusable step definitions makes it super quick to write a test, and being able to read through the feature spec in english (versus trying to parse through `describe` and `it` blocks) makes the purpose of the test, and functionality of the app abundantly clear.
-
 #### Visual Testing
 
 As a developer, CSS and styling scares me. You accidentally delete a random class name and suddenly your app looks like hot trash, and your pipeline is still green. I wanted a way to be able to verify that the changes I'm making aren't breaking my application styling unless _they're intentional_, and I wanted it to happen without me having to just stare at a browser (i mean).
 
-I already had [Storybook](https://storybook.js.org/) set up on my application, so I ended up adding [snapshot](https://storybook.js.org/addons/@storybook/addon-storyshots) testing to the storybook setup. It's nice because it can verify my components and pages haven't changed. I can change the viewport to verify that the app is consistent across mobile, table, and web. It's some peace of mind we all need.
+I already had [Storybook](https://storybook.js.org/) set up on my application, so I ended up adding [snapshot](https://storybook.js.org/addons/@storybook/addon-storyshots) testing to the storybook setup. It's nice because it can verify my components haven't changed. I can change the viewport to verify that the app is consistent across mobile, table, and web. It's some peace of mind we all need.
 
 #### Accessibility
 
@@ -54,18 +50,20 @@ On commit, a [hook](https://prettier.io/docs/en/precommit.html) runs prettier to
 
 #### On Push
 
-On push, a github actions job is triggered. First i build the app and cache it (so i don't have to build it at every step). I run ESLint, unit tests, functional tests, accessibility checks, and visual regression tests.
+On push, a github actions job is triggered. First i build the app and cache it (so i don't have to build it at every step). I run ESLint, unit tests, accessibility checks, and visual regression tests.
+
+I use vercel for hosting, so on push to non-master branches, a preview is built and deployed. This is great for making sure that things look good before merging to master.
 
 #### Master?
 
-During the github actions job, if the branch is master, it will deploy the application to github pages. I export the app to static files, and then those files are pushed to the `release` branch of this repository. This repository is set up so that when there are changes to the `release` branch, the code on that branch is redeployed to github pages.
+On pushes to the master branch vercel deploys the application to production. I'm a big fan of continuous delivery, and since i'm the only owner of this project adding continuous deployment to this application makes sense. Since building and testing are verified during pushes, and deployment processes are verified during pull request previews, production deployments really feel like "not a big deal", its great.
 
 ## Installation
 
 Clone the repository.
 
 ```bash
-git clone https://github.com/katebrune/katebrune.github.io.git
+git clone https://github.com/katebrune/katebrune.net.git
 ```
 
 Set node version.
@@ -91,19 +89,7 @@ yarn dev
 Run unit tests.
 
 ```bash
-yarn test:components
-```
-
-Run functional tests.
-
-```bash
-yarn test:features
-```
-
-Open Cypress.
-
-```bash
-yarn test:features-open
+yarn test
 ```
 
 Open Storybook.
