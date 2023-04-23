@@ -1,13 +1,12 @@
-# 🤠 katebrune.github.io
+# 🤠 katebrune.net
 
-![example workflow](https://github.com/katebrune/katebrune.github.io/actions/workflows/gh-pages.yml/badge.svg)
+![example workflow](https://github.com/katebrune/katebrune.net/actions/workflows/build-and-test.yml/badge.svg)
 
 Hi 👋 This project is my personal blog. It's also a space for me to play around with technologies that I'm interested in. You'd probably be interested in it if you're into:
 
 - NextJS
 - Tailwind
 - React Testing Library
-- Cypress
 - Storybook
 - Github Actions
 
