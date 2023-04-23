@@ -36,8 +36,5 @@ yarn-error.log*
 # eslint
 .eslintcache
 
-# cypress
-cypress/videos
-
 #storybook
 storybook-static
