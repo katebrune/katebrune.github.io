@@ -1,6 +1,6 @@
 import { Service } from 'typedi'
-import fs from 'fs'
-import path, { ParsedPath } from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 @Service()
 export class FileService {
@@ -11,7 +11,7 @@ export class FileService {
    * @param directory
    * @returns
    */
-  getAllFilesInDirectory(directory: string): ParsedPath[] {
+  getAllFilesInDirectory(directory: string): path.ParsedPath[] {
     const filenames = fs.readdirSync(directory)
     return filenames.map((filename: string) => path.parse(filename))
   }
@@ -25,7 +25,7 @@ export class FileService {
   getAllFilesOfTypeInDirectory(
     directory: string,
     extension: string,
-  ): ParsedPath[] {
+  ): path.ParsedPath[] {
     const files = this.getAllFilesInDirectory(directory)
     return files.filter((file) => file.ext === extension)
   }

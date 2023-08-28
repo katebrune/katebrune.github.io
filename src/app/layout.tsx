@@ -1,10 +1,12 @@
 import 'reflect-metadata'
-import '../../styles/globals.css'
-import { RootLayout } from '../modules/RootLayout/RootLayout'
+import React from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
+import '@/styles/globals.css'
+import { RootLayout } from '@/app/(components)/root-layout/root-layout'
+
 export const metadata = {
-  title: "Kate's Blog",
+  title: "kate's blog",
 }
 
 export default function Layout({

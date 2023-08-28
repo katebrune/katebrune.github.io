@@ -1,8 +1,8 @@
 import { Service } from 'typedi'
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import matter from 'gray-matter'
-import { FileService } from './file-service'
+import { FileService } from '@/services/file-service'
 
 export type PostMetadata = {
   metadata: any
@@ -14,9 +14,12 @@ export type PostData = PostMetadata & { content: any }
 export class MdxService {
   private postsDirectory: string
   private mdxFileExtension: string
-  constructor(private fileService: FileService) {
+  private fileService: FileService
+
+  constructor(private fs: FileService) {
     this.postsDirectory = path.join(process.cwd(), 'src', 'content')
     this.mdxFileExtension = '.mdx'
+    this.fileService = fs
   }
 
   getAllPostNames(): string[] {
