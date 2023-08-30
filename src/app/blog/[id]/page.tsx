@@ -22,7 +22,6 @@ async function getBlogPost({ id }: { id: string }) {
   const serialized = await serialize(post.content, {
     mdxOptions: {},
   })
-  console.log('SERIALIZED', serialized)
   return {
     metadata: post.metadata,
     content: serialized,

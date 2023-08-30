@@ -78,7 +78,7 @@ export const RootLayout: FunctionComponent<RootLayoutProperties> = (
               </Link>
             </div>
           </nav>
-          <main className="relative mx-8 pb-10 sm:mx-8 md:mx-16 lg:mx-52 xl:mx-96">
+          <main className="relative mx-2 pb-10 sm:mx-4 md:mx-16 lg:mx-52 xl:mx-96">
             {properties.children}
           </main>
         </div>
