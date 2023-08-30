@@ -6,6 +6,10 @@ module.exports = {
     '@storybook/addon-essentials',
     'storybook-css-modules',
     '@storybook/addon-mdx-gfm',
+    {
+      name: '@storybook/addon-styling',
+      options: {},
+    },
   ],
   framework: {
     name: '@storybook/nextjs',

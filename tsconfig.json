@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/app/*": ["src/app/*"],
+      "@/services/*": ["src/services/*"],
+      "@/styles/*": ["styles/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,11 +21,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": [
-      "node",
-      "jest",
-      "@testing-library/jest-dom"
-    ],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "incremental": true,
@@ -31,13 +31,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

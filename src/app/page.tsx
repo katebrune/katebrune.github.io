@@ -1,33 +1,45 @@
 'use server'
 
+import React from 'react'
 import moment from 'moment'
 import Container from 'typedi'
-import { PageUnderConstruction } from '../modules/PageUnderConstruction/PageUnderConstruction'
-import { MdxService } from '../services/mdx-service'
-import { Home } from './Home'
+
+import { MdxService } from '@/services/mdx-service'
+import { PostPreview } from '@/app/(components)/post-preview/post-preview'
 
 async function getPosts(): Promise<any[]> {
   const mdxService = Container.get(MdxService)
   const postsData = mdxService.getAllPostsMetadata()
-  const orderedPosts = postsData
+  return postsData
     .map(({ metadata }) => {
       const [month, day, year] = metadata.date.replace(',', '').split(' ')
       return {
         ...metadata,
-        mDate: moment([parseInt(year), 0, parseInt(day)]).month(month),
+        mDate: moment([Number.parseInt(year), 0, Number.parseInt(day)]).month(
+          month,
+        ),
       }
     })
     .sort((a, b) => a.mDate - b.mDate)
     .reverse()
-    .map(({ mDate, ...keep }) => ({ metadata: { ...keep } }))
-
-  return orderedPosts
+    .map(({ ...keep }) => ({ metadata: { ...keep } }))
 }
 
 export default async function HomePage() {
   const posts = await getPosts()
-  const pageUnderConstruction = false
 
-  if (pageUnderConstruction) return <PageUnderConstruction />
-  return <Home postPreviews={posts} />
+  return (
+    <div className="mt-4 flex flex-col items-start gap-8">
+      {posts.map(({ metadata }, index) => (
+        <PostPreview
+          id={metadata.id}
+          title={metadata.title}
+          description={metadata.description}
+          date={metadata.date}
+          tags={metadata.tags}
+          key={index}
+        />
+      ))}
+    </div>
+  )
 }
