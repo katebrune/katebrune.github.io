@@ -8,6 +8,7 @@ import { FruitSaladLoader } from '@/app/blog/[id]/(components)/fruit-salad-loade
 import { Image } from '@/app/blog/[id]/(components)/image/image'
 import { Code } from '@/app/blog/[id]/(components)/code/code'
 import { Typography } from '@/components/ui/typography/typography'
+import { Mermaid } from 'mdx-mermaid/lib/Mermaid'
 
 export function BlogPost({ content }: { content: any }) {
   const [loadingAnimationVisible, setLoadingAnimationVisible] = useState(true)
@@ -40,6 +41,7 @@ export function BlogPost({ content }: { content: any }) {
     Image: (properties: HTMLAttributes<HTMLImageElement>) => (
       <Image {...properties} alt="blog post image" />
     ),
+    mermaid: Mermaid,
   }
 
   if (loadingAnimationVisible) return <FruitSaladLoader />

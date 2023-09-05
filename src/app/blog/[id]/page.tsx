@@ -20,7 +20,9 @@ async function getBlogPost({ id }: { id: string }) {
   const mdxService = Container.get(MdxService)
   const post = mdxService.getPostData(id)
   const serialized = await serialize(post.content, {
-    mdxOptions: {},
+    mdxOptions: {
+      remarkPlugins: [],
+    },
   })
   return {
     metadata: post.metadata,
